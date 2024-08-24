@@ -1,0 +1,442 @@
+/*---------------------------------------------
+    :: Login
+-----------------------------------------------*/
+.login-area .login-card {
+    padding: 48px;
+    background: var(--white);
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
+            box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
+  }
+  @media (max-width: 575px) {
+    .login-area .login-card {
+      padding: 30px;
+    }
+  }
+  .login-area .login-card img {
+    margin: auto;
+    display: block;
+  }
+  .login-area .login-card .title {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .login-area .login-card .title h4 {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--primary-title);
+    text-align: center;
+  }
+  .login-area .login-card .remember-me {
+    position: relative;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 20px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .login-area .login-card .remember-me label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 25px;
+    position: relative;
+    cursor: pointer;
+  }
+  .login-area .login-card .remember-me label small {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--primary-title);
+    margin-left: 8px;
+  }
+  .login-area .login-card .remember-me .checkbox {
+    margin-right: 10px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .login-area .login-card .remember-me .checkbox:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  .login-area .login-card .remember-me .checkbox:checked ~ .checkmark::after {
+    display: block;
+  }
+  .login-area .login-card .remember-me .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: 1.5px solid #b1b5c4;
+    margin-right: 12px;
+    border-radius: 50%;
+  }
+  .login-area .login-card .remember-me .checkmark::after {
+    content: "\eb7b";
+    font-family: var(--remix-icon);
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: var(--white);
+    display: none;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .login-area .login-card .remember-me .forget-section span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    letter-spacing: 0.5px;
+    color: var(--tertiary-color);
+  }
+  .login-area .terms-condition span {
+    color: var(--tertiary-color);
+  }
+  .login-area .login-image img {
+    max-width: 100%;
+  }
+  @media (max-width: 991px) {
+    .login-area .login-image img {
+      display: none;
+    }
+  }
+  
+  .gutter-x-120 {
+    --bs-gutter-x: 120px;
+  }
+  
+  .login-bg {
+    position: relative;
+  }
+  .login-bg::before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    background-image: url(../images/auth-bg.html);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  @media only screen and (min-width: 1400px) and (max-width: 1599px) {
+    .login-bg::before {
+      width: 50%;
+      background-size: contain;
+    }
+  }
+  @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .login-bg::before {
+      width: 50%;
+      background-size: contain;
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .login-bg::before {
+      width: 40%;
+      background-size: contain;
+    }
+  }
+  @media (max-width: 991px) {
+    .login-bg::before {
+      display: none;
+    }
+  }
+  
+  .login-btn {
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    text-align: center;
+    display: inline-block;
+    color: var(--primary-paragraph);
+    font-size: 14px;
+    padding: 12px 15px;
+    font-weight: 500;
+  }
+  
+  .login-btn:hover {
+    background: var(--primary-color);
+    border: 1px solid transparent;
+    color: var(--white);
+  }
+  
+  .login-footer .create-account p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: var(--primary-paragraph);
+    text-align: center;
+    margin-block: 28px;
+  }
+  
+  .contact-form .contact-label {
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: var(--primary-paragraph);
+    margin-bottom: 8px;
+  }
+  .contact-form .contact-input {
+    color: var(--primary-title);
+    height: 49px;
+    width: 100%;
+    font-size: 16px;
+    padding: 11px 14px 11px 14px;
+    position: relative;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--primary-border);
+    text-transform: none;
+  }
+  .contact-form .contact-input::-webkit-input-placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+  }
+  .contact-form .contact-input::-moz-placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+  }
+  .contact-form .contact-input:-ms-input-placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+  }
+  .contact-form .contact-input::-ms-input-placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+  }
+  .contact-form .contact-input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #999999;
+  }
+  
+  .sign-with p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  .sign-with .icon-login-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  @media (max-width: 575px) {
+    .sign-with .icon-login-section {
+      gap: 20px;
+    }
+  }
+  .sign-with .icon-login-section .icon-login a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid var(--primary-border);
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    color: var(--primary-paragraph);
+    font-size: 18px;
+  }
+  @media (max-width: 575px) {
+    .sign-with .icon-login-section .icon-login a {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 15px;
+    }
+  }
+  .sign-with .icon-login-section .icon-login a:hover {
+    background: var(--primary-color);
+    border: 1px solid transparent;
+    color: var(--white);
+  }
+  
+  .password-input {
+    padding-right: 32px;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 45px;
+    right: 16px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 18px;
+  }
+
+
+  .login-form {
+    position: relative; 
+    padding: 180px 0 40px 0;
+  } 
+
+  .login-btn {
+    border: 0.5px solid black;
+  }
+
+
+  .top-padding {
+    padding: 180px 0 40px 0 !important;
+  }
+
+
+  /* dashboard design */
+
+  .dashboard {
+    padding-top: 140px;
+  }
+
+  #main {
+    margin-top: 60px;
+    
+    padding: 20px 30px;
+    transition: all 0.3s;
+}
+.dashboard .card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.dashboard .info-card {
+  padding-bottom: 10px;
+}
+
+  .main .card-body {
+    padding: 0 20px 20px 20px;
+  }
+
+  .dashboard .card-icon {
+    font-size: 29px;
+    line-height: 0;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.dashboard .customers-card .card-icon {
+  color: #ff771d;
+  background: #ffecdf;
+}
+
+.dashboard .sales-card .card-icon {
+  color: #4154f1;
+  background: #f6f6fe;
+}
+
+.dashboard .revenue-card .card-icon {
+  color: #2eca6a;
+  background: #e0f8e9;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.main .card-title {
+  padding: 20px 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #003a9e;
+  font-family: "Poppins", sans-serif;
+}
+
+.ps-3 {
+  padding-left: 1rem!important;
+}
+
+.dashboard .row .col-lg-12 {
+  padding: 37px !important;
+}
+
+.main .filter {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.dashboard .recent-sales {
+  font-size: 14px;
+}
+
+.card-title span {
+  color: #899bbd;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#dateTextBtn {
+  background-color: transparent;
+  border: transparent;
+}
+
+
+/* report view */
+
+.report-container {
+  width: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-top: #c52e3d 20px solid;
+  border-bottom: #66686b 20px solid;
+}
+
+.report-title {
+  color: #343a40;
+  font-family: "Poppins", sans-serif;
+}
+
+.report-text {
+  color: #343a40;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.work-details th {
+  background-color: #c52e3d;
+  color: white;
+}
+
+.work-details td,
+.work-details th {
+  text-align: center;
+}
