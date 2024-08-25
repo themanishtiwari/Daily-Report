@@ -78,7 +78,7 @@
                                         </a>
                                     </p>
                                 </div>
-                                <a href="{{url('auth/google')}}"
+                                <a href="{{url('google/login')}}"
                                     class="btn login-btn d-flex align-items-center justify-content-center gap-10">
                                     <img src="{{asset('assets/img/website/google-icon.png')}}" alt="img" class="m-0">
                                     <span>  &nbsp;  &nbsp;  login with Google</span>

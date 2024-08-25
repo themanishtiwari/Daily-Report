@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('daily_reports', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreignId('user_id')->constrained('daily_users')->onDelete('cascade')->nullable();
             $table->string('work_hour')->nullable();
             $table->string('date')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('user_id')->references('id')->on('daily_users')->onDelete('cascade');
         });
     }
 

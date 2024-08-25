@@ -85,11 +85,11 @@ class DashboardController extends Controller
             $data = '<button onclick="showData('.$report->id.')" class="text-primary fw-bold" id="dateTextBtn">'.$date.'</button>';
             return $data;
         })
-        ->addColumn('status', function($report){
-            if($report->work_hour >= 2){
+        ->addColumn('status', function($report) use($user){
+            if($report->work_hour >= $user->good_level){
                 $status = '<span class="badge text-bg-success">Good</span>';
             }
-            elseif($report->work_hour <= 1){
+            elseif($report->work_hour <= $user->poor_level){
                 $status = '<span class="badge text-bg-danger">Poor</span>';
             }
             else{
@@ -166,13 +166,16 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'date'  => 'bail|required|date_format:Y-m-d',
+            'date'  => 'bail|required|date_format:Y-m-d|before:tomorrow',
             'start' => 'bail|required|array',
             'start.*' => 'bail|required|date_format:H:i',
             'end'   => 'bail|required|array',
             'end.*'   => 'bail|required|date_format:H:i',
             'work'  => 'bail|required|array',
             'work.*'  => 'bail|required|string',
+        ],
+        [
+            'date.before' => "The date should be today or a past date."
         ]);
 
         if($validation->fails()){
